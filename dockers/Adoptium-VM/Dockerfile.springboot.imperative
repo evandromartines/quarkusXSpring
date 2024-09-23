@@ -1,0 +1,6 @@
+FROM eclipse-temurin:21-jre-alpine
+
+WORKDIR /app
+COPY ../sources/springboot.imperative/target/springboot.imperative-1.0.jar /app/springboot.imperative-1.0.jar
+
+CMD ["java", "-jar", "/app/springboot.imperative-1.0.jar"]

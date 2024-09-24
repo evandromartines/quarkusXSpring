@@ -1,0 +1,6 @@
+FROM bellsoft/liberica-openjdk-alpine:21
+
+WORKDIR /app
+COPY ../sources/springboot.reactive/target/springboot.reactive-1.0.jar /app/springboot.reactive-1.0.jar
+
+CMD ["java", "-jar", "/app/springboot.reactive-1.0.jar"]

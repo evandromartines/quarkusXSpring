@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-imperative-redhat-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-imperative-redhat
+  template:
+    metadata:
+      labels:
+        app: springboot-imperative-redhat
+    spec:
+      containers:
+      - name: springboot-imperative-redhat
+        image: springboot-imperative-redhat:jvm21
+        ports:
+        - containerPort: 8080

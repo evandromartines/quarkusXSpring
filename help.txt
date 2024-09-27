@@ -1,0 +1,21 @@
+#START MINIKUBE USE DRIVER LOCAL DOCKER 
+minikube start --driver=docker
+
+
+#LOAD LOCAL IMAGE IN MINIKUBE
+minikube image load postgresql:stable
+kubectl rollout restart deployment <nome-do-deployment>
+
+
+#force renove pod
+kubectl delete pod <nome-do-pod> --force --grace-period=0
+
+
+#remove deployment
+kubectl scale deployment <nome do deployments> --replicas=0
+
+
+docker run -d --name postgres -p 5432:5432 postgresql:stable
+
+
+curl http://192.168.49.2:30080/api/customers

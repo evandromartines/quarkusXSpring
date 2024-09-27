@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-imperative-adoptium-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-imperative-adoptium
+  template:
+    metadata:
+      labels:
+        app: springboot-imperative-adoptium
+    spec:
+      containers:
+      - name: springboot-imperative-adoptium
+        image: springboot-imperative-adoptium:jvm21
+        ports:
+        - containerPort: 8080

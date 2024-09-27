@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quarkus-imperative-redhat-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quarkus-imperative-redhat
+  template:
+    metadata:
+      labels:
+        app: quarkus-imperative-redhat
+    spec:
+      containers:
+      - name: quarkus-imperative-redhat
+        image: quarkus-imperative-redhat:jvm21
+        ports:
+        - containerPort: 8080

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+echo "####################################################################################################################"
+echo "#                                         POSTGRESQL                                                               #"
+echo "####################################################################################################################"
+#docker build --no-cache -t postgresql:stable -f dockers/Postgres/Dockerfile .
+
 echo "####################################################################################################################"
 echo "#                                         RED HAT VM:SPRING BOOT                                                   #"
 echo "####################################################################################################################"
@@ -21,9 +27,14 @@ echo "##########################################################################
 echo "####################################################################################################################"
 echo "#                                         GRAAL VM: SPRING BOOT                                                    #"
 echo "####################################################################################################################"
-docker build --no-cache -t springboot-imperative-graal:jvm21 -f dockers/Graal-VM/Dockerfile.springboot.imperative .
-docker build --no-cache -t springboot-reactive-graal:jvm21 -f dockers/Graal-VM/Dockerfile.springboot.reactive .
+#docker build --no-cache -t springboot-imperative-graal:jvm21 -f dockers/Graal-VM/Dockerfile.springboot.imperative .
+#docker build --no-cache -t springboot-reactive-graal:jvm21 -f dockers/Graal-VM/Dockerfile.springboot.reactive .
 
 
+echo "####################################################################################################################"
+echo "#                                         RED HAT VM:QUARKUS                                                       #"
+echo "####################################################################################################################"
+docker build --no-cache -t quarkus-imperative-redhat:jvm21 -f dockers/RedHat-VM/Dockerfile.quarkus.imperative .
+#docker build --no-cache -t springboot-reactive-redhat:jvm21 -f dockers/RedHat-VM/Dockerfile.springboot.reactive .
 
 
